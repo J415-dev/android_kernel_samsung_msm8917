@@ -1,0 +1,3 @@
+[submodule "scripts/dtc/qcdtc"]
+	path = scripts/dtc/qcdtc
+	url = https://github.com/Alberto97/platform_vendor_qcom-opensource_dtbtool

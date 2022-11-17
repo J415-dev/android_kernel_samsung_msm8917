@@ -104,7 +104,7 @@ do_func(Elf_Ehdr *ehdr, char const *const fname, table_sort_t custom_sort)
 	Elf_Shdr *sort_needed_sec;
 	Elf_Rel *relocs = NULL;
 	int relocs_size = 0;
-	uint32_t *sort_done_location;
+	uint32_t __attribute__((unused)) *sort_done_location;
 	const char *secstrtab;
 	const char *strtab;
 	char *extab_image;
