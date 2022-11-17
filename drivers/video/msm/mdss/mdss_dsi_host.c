@@ -36,6 +36,7 @@
 #define VSYNC_PERIOD 17
 #if defined(CONFIG_FB_MSM_MDSS_SAMSUNG)
 #define DMA_TX_TIMEOUT 1000
+#define FIX_LOGSPAM_FIX_STACKFRAME
 #else
 #define DMA_TX_TIMEOUT 200
 #endif
@@ -1636,7 +1637,7 @@ static int mdss_dsi_cmd_dma_tpg_tx(struct mdss_dsi_ctrl_pdata *ctrl,
 	return ret;
 }
 
-#if defined(CONFIG_FB_MSM_MDSS_SAMSUNG)
+#if defined(CONFIG_FB_MSM_MDSS_SAMSUNG) && !defined(FIX_LOGSPAM_FIX_STACKFRAME)
 static void print_cmd_desc(struct mdss_dsi_ctrl_pdata *ctrl,
 		struct dsi_cmd_desc *cmds, int cnt)
 {
@@ -1692,7 +1693,7 @@ static int mdss_dsi_cmds2buf_tx(struct mdss_dsi_ctrl_pdata *ctrl,
 	cm = cmds;
 	len = 0;
 
-#if defined(CONFIG_FB_MSM_MDSS_SAMSUNG)
+#if defined(CONFIG_FB_MSM_MDSS_SAMSUNG) && !defined(FIX_LOGSPAM_FIX_STACKFRAME)
 	print_cmd_desc(ctrl, cmds, cnt);
 #endif
 
